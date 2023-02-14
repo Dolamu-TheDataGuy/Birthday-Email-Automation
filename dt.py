@@ -1,18 +1,12 @@
 import smtplib
-
-
-my_email = "dolamuoludare@gmail.com"
-
-password = "bmvmxaaytwthyzsr"
-
-my_email1 = "dolamuoludare@yahoo.com"
+import credential
 
 
 with smtplib.SMTP("smtp.gmail.com", 587) as connection:
     connection.starttls()
-    connection.login(user=my_email, password=password)
+    connection.login(user=credential.MY_EMAIL, password=credential.MY_PASSWORD)
     connection.sendmail(
-        from_addr=my_email,
-        to_addrs=my_email1,
+        from_addr=credential.MY_EMAIL,
+        to_addrs=credential.MY_EMAIL,
         msg="Subject: Hello\n\n This is the body of my email"
     )
